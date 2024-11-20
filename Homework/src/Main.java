@@ -1,17 +1,19 @@
 import java.util.Scanner;
 
-public class PrintMyInfo {
+public class Main {
     public static void main(String[] args) {
-        String name="李高明";
-        System.out.println("name = " + name);
-        String sex="男性";
-        System.out.println("sex = " + sex);
-        int age=21;
-        System.out.println("age = " + age);
-        double high=1.81;
-        System.out.println("high = " + high);
-        String habby="玩无畏契约";
-        System.out.println("habby = " + habby);
+
+            String name="李高明";
+            System.out.println("name = " + name);
+            String sex="男性";
+            System.out.println("sex = " + sex);
+            int age=21;
+            System.out.println("age = " + age);
+            double high=1.81;
+            System.out.println("high = " + high);
+            String habby="玩无畏契约";
+            System.out.println("habby = " + habby);
+
     }
 }
 class SanJiaoXing{
