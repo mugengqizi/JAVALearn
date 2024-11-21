@@ -26,7 +26,8 @@ class IfTest{
         Scanner sc = new Scanner(System.in);
         System.out.print("去旅行的人数为：");
         int people = sc.nextInt();
-        System.out.print("需要的房间数为："+(people/3+people%3));
+        int last=(people%3==0)?0:1;
+        System.out.print("需要的房间数为："+(people/3+last));
     }
 }
 
