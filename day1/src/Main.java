@@ -36,19 +36,30 @@ class SW{
         Scanner sc=new Scanner(System.in);
         System.out.println("请输入颜色的标志：");
         int color=sc.nextInt();
-        switch(color){
-            case 1:
-                System.out.println("蓝色");
-                break;
-            case 2:
-                System.out.println("黄色");
-                break;
-            case 3:
-                System.out.println("白色");
-                break;
-            default:
-                System.out.println("输入错误");
-                break;
+        switch (color) {
+            case 1 -> System.out.println("蓝色");
+            case 2 -> System.out.println("黄色");
+            case 3 -> System.out.println("白色");
+            default -> System.out.println("输入错误");
         }
+    }
+}
+
+class Odd{
+    public static void main(String[] args) {
+        System.out.println("100以内所有的奇数为：");
+        for (int i = 0; i <= 100; i++) {
+            if (i%2==1) System.out.print(i+" ");
+        }
+    }
+}
+
+class And{
+    public static void main(String[] args) {
+        int sum=0;
+        for (int i = 1; i <=10 ; i++) {
+            sum += i;
+        }
+        System.out.println("1+2+3+...+9+10的和为："+sum);
     }
 }
