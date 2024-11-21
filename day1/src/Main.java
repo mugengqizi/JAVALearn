@@ -30,3 +30,25 @@ class judg{
         }
     }
 }
+
+class SW{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("请输入颜色的标志：");
+        int color=sc.nextInt();
+        switch(color){
+            case 1:
+                System.out.println("蓝色");
+                break;
+            case 2:
+                System.out.println("黄色");
+                break;
+            case 3:
+                System.out.println("白色");
+                break;
+            default:
+                System.out.println("输入错误");
+                break;
+        }
+    }
+}
