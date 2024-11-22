@@ -63,3 +63,28 @@ class And{
         System.out.println("1+2+3+...+9+10的和为："+sum);
     }
 }
+
+class Kun{
+    public static void main(String[] args) {
+        for (int i = 0; i < 21; i++) {
+            for (int j = 0; j < 34; j++) {
+                for (int k = 0; k < 100; k++) {
+                    if (i*5+j*3+k==100&&i+j+k*3==100){
+                        System.out.println("公鸡" + i + "只，母鸡" + j + "只，小鸡" + k*3 + "只");
+                    }
+                }
+            }
+        }
+    }
+}
+
+class MultiplicationTable{
+    public static void main(String[] args) {
+        for (int i = 1; i <=9; i++) {
+            for (int j = 1; j <=i ; j++) {
+                System.out.print(j+"*"+i+"="+i*j+" ");
+            }
+            System.out.println();
+        }
+    }
+}
