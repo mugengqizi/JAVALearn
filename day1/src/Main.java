@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -86,6 +87,19 @@ class MultiplicationTable{
             }
             // \t可以对齐
             System.out.println();
+        }
+    }
+}
+
+class Arr{
+    public static void main(String[] args) {
+        int[] arr=new int[10];
+        Random R=new Random();
+        for (int i = 0; i < arr.length; i++) {
+            arr[i]=R.nextInt(30);
+        }
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
         }
     }
 }
