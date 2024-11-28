@@ -88,4 +88,5 @@ class J5Limit{
         if (num<=9&&num>=0) return true;
         else return false;
     }
+
 }

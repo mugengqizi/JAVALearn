@@ -181,3 +181,4 @@ class KuaiPai{
         quicks(arr,j+1,high);
     }
 }
+
