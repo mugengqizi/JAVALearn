@@ -35,6 +35,22 @@ class Rectangle1 extends Shape {
     private double width;
     private double height;
 
+    public double getWidth() {
+        return width;
+    }
+
+    public void setWidth(double width) {
+        this.width = width;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
     public Rectangle1() {
     }
 
@@ -56,6 +72,14 @@ class Rectangle1 extends Shape {
     public Point center() {
         Point p1 = new Point(getP1().getX() + width / 2, getP1().getY() - height / 2);
         return p1;
+    }
+
+    public boolean isIntersect(Rectangle1 rect) {
+        Point p1 = this.center();
+        Point p2 = rect.center();
+        double centerHeight = Math.abs(p1.getY() - p2.getY());
+        double centerWidth = Math.abs(p1.getX() - p2.getX());
+        return centerWidth < (this.width + rect.getWidth()) / 2 || centerHeight < (this.height + rect.height) / 2;
     }
 }
 
