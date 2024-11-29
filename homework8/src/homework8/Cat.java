@@ -40,6 +40,9 @@ class Test4 {
         System.out.print("请输入猫的名字：");
         String name = sc.nextLine();
         Cat cat = new Cat(color, name);
-        System.out.println(cat.toString());
+        System.out.println(cat);
+        cat.eat();
+        cat.sleep();
+        cat.catchMouse();
     }
 }
