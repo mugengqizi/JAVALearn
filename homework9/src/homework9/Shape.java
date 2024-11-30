@@ -79,7 +79,7 @@ class Rectangle1 extends Shape {
         Point p2 = rect.center();
         double centerHeight = Math.abs(p1.getY() - p2.getY());
         double centerWidth = Math.abs(p1.getX() - p2.getX());
-        return centerWidth < (this.width + rect.getWidth()) / 2 || centerHeight < (this.height + rect.height) / 2;
+        return centerWidth < (this.width + rect.getWidth()) / 2 && centerHeight < (this.height + rect.height) / 2;
     }
 }
 
