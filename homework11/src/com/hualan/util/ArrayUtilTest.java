@@ -1,0 +1,8 @@
+package com.hualan.util;
+
+public class ArrayUtilTest {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4};
+        ArrayUtils.print(arr);
+    }
+}
