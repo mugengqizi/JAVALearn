@@ -8,10 +8,10 @@ public class Main {
             start++;
         }
         int end = str.length() - 1;
-        while (end > start && str.charAt(end) != ' ') {
+        while (end > start && str.charAt(end) == ' ') {
             end--;
         }
-        System.out.println(str.substring(start, end));
+        System.out.println(str.substring(start, end + 1));
         System.out.println("===================");
         String str2 = "username=zhangsan&password=123456&phone=18612345678";
         String[] str3 = str2.split("&");
