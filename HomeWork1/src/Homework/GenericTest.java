@@ -81,6 +81,7 @@ class Cat {
         Cat other = (Cat) obj;
         return name.equals(other.name) && age == other.age;
     }
+    
 }
 
 public class GenericTest {
@@ -94,7 +95,7 @@ public class GenericTest {
 
     }
 }
-
+// 泛型方法
 class ArrayUtils {
     private ArrayUtils() {
     }
@@ -111,4 +112,5 @@ class ArrayUtils {
         }
         return -1;
     }
+
 }
