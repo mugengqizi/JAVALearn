@@ -30,13 +30,14 @@ public class J2ListTest {
         System.out.println("=========================================");
         System.out.println("请输入一个工人的信息：");
         Scanner sc = new Scanner(System.in);
-        System.out.print("姓名为：");
-        String name1 = sc.nextLine();
-        System.out.print("年龄为：");
-        Integer age1 = sc.nextInt();
-        System.out.print("工资为：");
-        double salary1 = sc.nextDouble();
-        list.add(new Worker(name1, age1, salary1));
+//        System.out.print("姓名为：");
+//        String name1 = sc.nextLine();
+//        System.out.print("年龄为：");
+//        Integer age1 = sc.nextInt();
+//        System.out.print("工资为：");
+//        double salary1 = sc.nextDouble();
+        list.add(new Worker(sc.nextLine(), sc.nextInt(), sc.nextDouble()));
+//        list.add(new Worker(name1, age1, salary1));
 
         System.out.println(list);
     }
