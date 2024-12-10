@@ -36,9 +36,25 @@ public class J2ListTest {
 //        Integer age1 = sc.nextInt();
 //        System.out.print("工资为：");
 //        double salary1 = sc.nextDouble();
-        list.add(new Worker(sc.nextLine(), sc.nextInt(), sc.nextDouble()));
-//        list.add(new Worker(name1, age1, salary1));
-
+        Worker worker = new Worker(sc.nextLine(), sc.nextInt(), sc.nextDouble());
+        if (list.contains(worker)) {
+            System.out.println("该工人已存在");
+        } else {
+            list.add(worker);
+            System.out.println("OK");
+        }
+//        boolean flag = true;
+//        for (int i = 0; i < list.size(); i++) {
+//            if (list.get(i).equals(worker)) {
+//                flag = false;
+//            }
+//        }
+//        if (flag) {
+//            list.add(worker);
+//        } else {
+//            System.out.println("该工人已存在");
+//        }
+        System.out.println("==========================================");
         System.out.println(list);
     }
 }
