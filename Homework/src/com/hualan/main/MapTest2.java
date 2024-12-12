@@ -5,7 +5,7 @@ import com.hualan.bean.RaceInfo;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-import java.util.Set;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 /*1. 已知历届世界杯信息如下:
 
@@ -82,17 +82,33 @@ public class MapTest2 {
         */
         System.out.print("请输入需要查询的球队：");
         String winner = sc.next();
-        boolean flag = false;
-        Set<Integer> set = map.keySet();
-        for (Integer inter : set) {
-            if (map.get(inter).getWinner().equals(winner)) {
-                System.out.print(inter + " ");
-                flag = true;
+        AtomicBoolean flag = new AtomicBoolean(false);
+
+//        Set<Integer> set = map.keySet();
+//        for (Integer inter : set) {
+//            if (map.get(inter).getWinner().equals(winner)) {
+//                System.out.print(inter + " ");
+//                flag = true;
+//            }
+//        }
+
+//        Set<Map.Entry<Integer, RaceInfo>> set3 = map.entrySet();
+//        for (Map.Entry<Integer, RaceInfo> race : set3) {
+//            if (race.getValue().getWinner().equals(winner)) {
+//                System.out.print(race.getKey() + " ");
+//                flag = true;
+//            }
+//        }
+        map.forEach((k, v) -> {
+            if (v.getWinner().equals(winner)) {
+                System.out.print(k + " ");
+                flag.set(true);
             }
-        }
-        if (!flag) {
+        });
+        if (!flag.get()) {
             System.out.println("没有获得过世界杯冠军");
         }
+
 
     }
 }
