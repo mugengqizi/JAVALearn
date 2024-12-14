@@ -13,7 +13,7 @@ public class StreamTest {
         List<String> list = List.of("orange", "grape", "apple", "banana", "kiwi", "pear", "watermelon");
         list.stream()
                 .filter(s1 -> s1.length() > 5)
-                .sorted()
+                .sorted((s1, s2) -> s2.compareTo(s1))
                 .forEach(s -> System.out.print(s + "\t"));
         /*
           转换大写：给定一个字符串列表，将其中所有字符串转换为大写并输出。
