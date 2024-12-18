@@ -72,7 +72,7 @@ public class AddressBook {
     public void showContactsByGroupName() {
         System.out.print("请输入要查看的分组：");
         String groupName = sc.next();
-        Iterator iterator = map.keySet().iterator();
+        Iterator<String> iterator = map.keySet().iterator();
         while (iterator.hasNext()) {
             String groupName2 = (String) iterator.next();
             if (groupName2.equals(groupName)) {
