@@ -4,6 +4,7 @@ import com.hualan.bean.ExamItem;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -38,35 +39,23 @@ public class ExamService implements Serializable {
             while ((line = reader.readLine()) != null) {
                 count++;
                 switch (count) {
-                    case 1:
-                        item.setTitle(line);
-                        break;
-                    case 2:
-                        item.setOptionA(line);
-                        break;
-                    case 3:
-                        item.setOptionB(line);
-                        break;
-                    case 4:
-                        item.setOptionC(line);
-                        break;
-                    case 5:
-                        item.setOptionD(line);
-                        break;
-                    case 6:
+                    case 1 -> item.setTitle(line);
+                    case 2 -> item.setOptionA(line);
+                    case 3 -> item.setOptionB(line);
+                    case 4 -> item.setOptionC(line);
+                    case 5 -> item.setOptionD(line);
+                    case 6 -> {
                         item.setAnswer(line);
                         itemList.add(item);
                         item = new ExamItem();
                         count = 0;
-                        break;
-                    default:
-                        break;
+                    }
+                    default -> {
+                    }
                 }
             }
             answerrArr = new String[itemList.size()];
-            for (int i = 0; i < answerrArr.length; i++) {
-                answerrArr[i] = "null";
-            }
+            Arrays.fill(answerrArr, "null");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -88,10 +77,8 @@ public class ExamService implements Serializable {
     /**
      * 开始考试方法
      */
-    public void startExam() throws IOException {
-        for (int i = 0; i < answerrArr.length; i++) {
-            answerrArr[i] = "null";
-        }
+    public void startExam() {
+        Arrays.fill(answerrArr, "null");
         score = 0;
         while (true) {
             showHelp();
@@ -149,11 +136,8 @@ public class ExamService implements Serializable {
     /**
      * 保存用户答案和成绩的方法
      */
-    public void save() throws IOException {
+    public void save() {
         File file = new File("Homework25/result.txt");
-        if (!file.exists()) {
-            file.createNewFile();
-        }
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file, true))) {
             writer.newLine();
             for (String answer : answerrArr) {
@@ -170,7 +154,12 @@ public class ExamService implements Serializable {
      */
     public void printLastExam() {
         try {
-            String lastLine = readLastLine("Homework25/result.txt");
+            String line = "Homework25/result.txt";
+            File file = new File(line);
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+            String lastLine = readLastLine(line);
 
             if (!lastLine.isEmpty()) {
                 StringBuilder sb = new StringBuilder();
@@ -201,8 +190,7 @@ public class ExamService implements Serializable {
     }
 
     public static String readLastLine(String filePath) throws IOException {
-        RandomAccessFile randomFile = new RandomAccessFile(filePath, "r");
-        try {
+        try (RandomAccessFile randomFile = new RandomAccessFile(filePath, "r")) {
             long fileLength = randomFile.length() - 1;
             StringBuilder sb = new StringBuilder();
             for (long pos = fileLength; pos != -1; pos--) {
@@ -216,8 +204,6 @@ public class ExamService implements Serializable {
             }
             return sb.reverse().toString();
 
-        } finally {
-            randomFile.close();
         }
     }
 }

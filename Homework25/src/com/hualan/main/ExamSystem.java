@@ -2,7 +2,6 @@ package com.hualan.main;
 
 import com.hualan.service.ExamService;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 public class ExamSystem {
@@ -19,25 +18,20 @@ public class ExamSystem {
         System.out.print("请选择：");
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         ExamService examService = new ExamService();
         while (true) {
             printMenu();
             String input = scanner.nextLine();
             switch (input) {
-                case "1":
-                    examService.startExam();
-                    break;
-                case "2":
-                    examService.printLastExam();
-                    break;
-                case "3":
+                case "1" -> examService.startExam();
+                case "2" -> examService.printLastExam();
+                case "3" -> {
                     System.out.println("退出系统");
                     System.exit(0);
-                    break;
-                default:
-                    System.out.println("输入有误，请重新输入");
+                }
+                default -> System.out.println("输入有误，请重新输入");
             }
         }
     }
