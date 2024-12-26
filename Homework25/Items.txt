@@ -4,12 +4,15 @@ B. 1994
 C. 1996
 D. 1999
 C
+
+
 第2题 下列关于JDK、JRE和JVM的描述，哪项正确？
 A． JDK中包含了JRE，JVM中包含了JRE
 B． JDK中包含了JRE，JRE中包含了JVM
 C． JRE中包含了JDK，JVM中包含了JRE
 D． JRE中包含了JDK，JDK中包含了JVM
 B
+
 第3题 用于生成Java文档的JDK工具是？
 A. javac 
 B. jdb

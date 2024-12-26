@@ -37,20 +37,22 @@ public class ExamService implements Serializable {
             int count = 0;
             ExamItem item = new ExamItem();
             while ((line = reader.readLine()) != null) {
-                count++;
-                switch (count) {
-                    case 1 -> item.setTitle(line);
-                    case 2 -> item.setOptionA(line);
-                    case 3 -> item.setOptionB(line);
-                    case 4 -> item.setOptionC(line);
-                    case 5 -> item.setOptionD(line);
-                    case 6 -> {
-                        item.setAnswer(line);
-                        itemList.add(item);
-                        item = new ExamItem();
-                        count = 0;
-                    }
-                    default -> {
+                if (!line.trim().isEmpty()) {
+                    count++;
+                    switch (count) {
+                        case 1 -> item.setTitle(line);
+                        case 2 -> item.setOptionA(line);
+                        case 3 -> item.setOptionB(line);
+                        case 4 -> item.setOptionC(line);
+                        case 5 -> item.setOptionD(line);
+                        case 6 -> {
+                            item.setAnswer(line);
+                            itemList.add(item);
+                            item = new ExamItem();
+                            count = 0;
+                        }
+                        default -> {
+                        }
                     }
                 }
             }
